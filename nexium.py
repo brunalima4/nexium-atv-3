@@ -67,7 +67,7 @@ senha= tk.Entry(juntos2, font=("Californian FB", 15), show= "*")
 senha.pack(pady= 10, side= "left")
 
 #CONFIRMAR
-conf= tk.Button(janela, text= "Corfirmar", font=("Californian FB", 15), width= 10, command= limpar)
+conf= tk.Button(janela, text= "Confirmar", font=("Californian FB", 15), width= 10, command= limpar)
 conf.pack(pady= 10, anchor= "w", padx= "100")
 
 #Ou
