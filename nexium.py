@@ -14,19 +14,26 @@ def limpar_tela():
         widget.destroy()
 
 def logar():
-    limpar_tela()
-    frame = tk.Frame(janela)
-    frame.pack(padx=10, pady=10)
+    global usuario_cadastrado
+    global senha_cadastrada
 
-    imagem = Image.open(r"u:\Bruna\interfacenexium.png")
-    imagem = imagem.resize((1200, 700))
-    imagem_tk = ImageTk.PhotoImage(imagem)
-    label_img = tk.Label(frame, image=imagem_tk)
-    label_img.image = imagem_tk
-    label_img.pack(pady=10)
+    if usuariol.get() == usuario_cadastrado and senhal.get() == senha_cadastrada:
+        limpar_tela()
+        frame = tk.Frame(janela)
+        frame.pack(padx=10, pady=10)
 
-    label_boas_vindas = tk.Label(frame, text="Bem-vindo à Tela Principal!", font=("Arial", 16))
-    label_boas_vindas.pack(pady=10)
+        imagem = Image.open(r"u:\Bruna\interfacenexium.png")
+        imagem = imagem.resize((1200, 700))
+        imagem_tk = ImageTk.PhotoImage(imagem)
+        label_img = tk.Label(frame, image=imagem_tk)
+        label_img.image = imagem_tk
+        label_img.pack(pady=10)
+
+        label_boas_vindas = tk.Label(frame, text="Bem-vindo à Tela Principal!", font=("Arial", 16))
+        label_boas_vindas.pack(pady=10)
+   
+    else:
+        messagebox.showerror("Erro de Login", "Usuário ou senha incorretos!")
 
 def limpar():
     global usuario_cadastrado, senha_cadastrada
@@ -98,4 +105,3 @@ ent.pack(pady= 10, anchor= "w", padx= "100")
 
 
 janela.mainloop()
-    
